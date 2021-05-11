@@ -1,11 +1,9 @@
 <h2>Comandos a ejecutar:</h2>
-<form>
-    <input type='text' name='comandos_ingresados'>
-    <input type='submit' value='Iniciar'>
-</form>
 
-<!-- 
-<label>Posicion Inicial: </label><br/>
-<label>Comandos: </label><br/>
-<label>Posicion Final: </label><br/>
--->
+<form method="post" action="/inicio">
+    <input type='text' name='comandos_ingresados'>
+    <input type='submit' value='ejecutar'>
+</form>
+<label>Posicion Inicial: <%=@posicion_inicial%></label><br/>
+<label>Comandos: <%=@comandos%></label><br/>
+<label>Posicion Final: <%=@posicion_final%></label><br/>
