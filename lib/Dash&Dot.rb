@@ -45,22 +45,21 @@ def tam(tamano)
 end
 
 #funciones para mover
-def avanzar(ubicacion)#[y =>2, x =>2, N] 
-    if (ubicacion[2] == 'O')
-        # x=x-1
-        ubicacion[1]=ubicacion[1]-1
+def avanzar_oeste_este(x, di)#[y =>2, x =>2, N] 
+    if (di == 'O')
+        return x=x-1
     end
-    if (ubicacion[2] == 'E')
-        # x=x+1
-        ubicacion[1]=ubicacion[1]+1
+    if (di == 'E')
+        return x=x+1
     end
-    if (ubicacion[2] == 'N')
-        # y=y-1
-        ubicacion[0]=ubicacion[0]-1
+end
+
+def avansar_norte_sur(y, di)
+    if (di == 'N')
+        return y=y-1
     end
-    if (ubicacion[2] == 'S')
-        # y=y+1
-        ubicacion[0]=ubicacion[0]+1
+    if (di == 'S')
+        return y=y+1
     end
 end
 
