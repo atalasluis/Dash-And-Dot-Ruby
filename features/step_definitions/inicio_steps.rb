@@ -2,11 +2,11 @@ Given("visito la pagina de comandos") do
     visit '/'
     click_button('iniciar')
 end
-  
-When("ingreso el posicion inicial del auto {string}") do |posicion_inicial|
-    fill_in('comandos_ingresados', :with => posicion_inicial)
+
+When("ingreso los datos {string}") do |datos|
+    fill_in('datos_ingresados', :with => datos)
 end
-  
+
 When("presiono el boton {string}") do |ejecutar|
     click_button('ejecutar')
 end
