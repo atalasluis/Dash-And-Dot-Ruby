@@ -8,11 +8,6 @@ def Dash_Dot(cad) #cad => 5,5 - 2,2N - IAIAIADA
     return cadenas[1]+"-"+cadenas[2]+"-"+pos_final
 end
 
-def div(cadena)
-    cad=cadena.split('-')
-    return cad
-end
-
 def mover_auto(cad_tamano, cad_ubicacion, cad_comandos)
     tamano=tam(cad_tamano) #"5,5"
     ubicacion=ubic(cad_ubicacion)#"2,2,N" 
@@ -44,7 +39,10 @@ def tam(tamano)
     return aux #[5,5]
 end
 #ya testeadas
-
+def div(cadena)
+    cad=cadena.split('-')
+    return cad
+end
 #funciones para mover
 def avanzar_oeste_este(x, di)#[y =>2, x =>2, N] 
     if (di == 'O')

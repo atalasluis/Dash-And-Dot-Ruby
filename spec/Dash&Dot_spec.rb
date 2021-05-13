@@ -27,6 +27,12 @@ RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver un string dividido en varios" do
         expect(div("5,5-2,2,N-IAIAIADA")).to eq(["5,5","2,2,N","IAIAIADA"])
     end
+    it "Deberia devolver cordenadas de string a int" do
+        expect(ubic("2,2,N")).to eq([2,2,"N"])
+    end
+    it "Deberia devolver tamano de string a int" do
+        expect(tam("5,5")).to eq([5,5])
+    end
     #it "Deberia devolver la ubicacion inicial, final y comandos" do
     #    expect(Dash_Dot("5,5-2,2,N-IAIAIADA")).to eq("2,2,N-IAIAIADA-4,2,S")#[[],[],[]]
     #end
