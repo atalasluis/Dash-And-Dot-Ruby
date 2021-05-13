@@ -1,7 +1,16 @@
 Feature:
     COMO: jugador
-    QUIERO: ingresar un comando con un botón ejecutar para el movimiento del auto
+    QUIERO: poder ingresar un comando
     PARA: guiar el auto en la pista
+
+    COMO: jugador
+    QUIERO: poder ver la ubicación fina, inicial y los comandos ingresados 
+    PARA: guiar el auto en la pista
+
+    COMO: jugador
+    QUIERO: un botón para ejecutar el movimiento del auto
+    PARA: guiar el auto en la pista
+
 
 Scenario:
     Given visito la pagina de comandos
