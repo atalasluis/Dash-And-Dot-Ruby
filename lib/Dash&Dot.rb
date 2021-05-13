@@ -43,6 +43,7 @@ def tam(tamano)
     aux[1]=aux[1].to_i
     return aux #[5,5]
 end
+#ya testeadas
 
 #funciones para mover
 def avanzar_oeste_este(x, di)#[y =>2, x =>2, N] 
