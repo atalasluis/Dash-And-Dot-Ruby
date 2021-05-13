@@ -36,7 +36,14 @@ RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver ubicacion final" do
         expect(mover_auto([5,5],[2,2,"N"],"IAIAIADA")).to eq([4,2,"S"])
     end
-    #it "Deberia devolver la ubicacion inicial, final y comandos" do
-    #    expect(Dash_Dot("5,5-2,2,N-IAIAIADA")).to eq("2,2,N-IAIAIADA-4,2,S")#[[],[],[]]
+    it "Deberia devolver ubicacion final" do
+        expect(Dash_Dot("5,5-2,2,N-IAIAIADA")).to eq(["2,2,N","IAIAIADA","4,2,S"])
+    end
+    #por ver
+    #it "Deberia devolver ubicacion final sin salir de los limites" do
+    #    expect(mover_auto([5,5],[2,2,"N"],"IAAA")).to eq([2,0,"O"])
+    #end
+    #it "Deberia devolver ubicacion final sin salir de los limites" do
+    #    expect(mover_auto([5,5],[2,2,"N"],"IAIAAA")).to eq([4,1,"S"])
     #end
 end
