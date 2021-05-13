@@ -7,15 +7,14 @@ get '/' do
 end
 
 post '/inicio' do
-    #resp [[],[],[]]
-    #@posicion_inicial=params[:resp[0]]
-    #arreglo_resultado= Dash_Dot()
+    
     datos=params[:datos_ingresados]
     if datos!=nil
-        cad=div(datos)
-        @posicion_inicial=cad[1]
-        @comandos=cad[2]
-        @posicion_final=cad[0]
+        #cad=div(datos)
+        cad=Dash_Dot(datos)
+        @posicion_inicial=cad[0]
+        @comandos=cad[1]
+        @posicion_final=cad[2]
     else
         @posicion_inicial=params[:datos_ingresados]
         @comandos=params[:datos_ingresados]
