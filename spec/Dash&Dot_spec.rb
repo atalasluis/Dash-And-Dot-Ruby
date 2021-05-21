@@ -1,4 +1,7 @@
 require './lib/Dash&Dot.rb'
+require './lib/Direccion.rb'
+require './lib/Mover.rb'
+
 RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver la direccion" do
         expect(direccion("N", "I")).to eq("O")
