@@ -1,15 +1,12 @@
+require './lib/Limites.rb'
 
 def avanzar(ubicacion, tamano)
     
     if (ubicacion[2] == 'N' || ubicacion[2] == 'S')
-        if(0 <= ubicacion[0] && ubicacion[0] < tamano[0])# no limita
-            ubicacion[0]=avansar_norte_sur(ubicacion[0], ubicacion[2])
-        end
+        ubicacion[0]=avansar_norte_sur(ubicacion[0], ubicacion[2])
     end
     if (ubicacion[2] == 'O' || ubicacion[2] == 'E')
-        if (0 <= ubicacion[1] && ubicacion[1] < tamano[1])# no limita
-            ubicacion[1]=avanzar_oeste_este(ubicacion[1], ubicacion[2])
-        end
+        ubicacion[1]=avanzar_oeste_este(ubicacion[1], ubicacion[2])
     end
     return ubicacion
 end
