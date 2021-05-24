@@ -1,9 +1,10 @@
 <h2>Comandos a ejecutar:</h2>
 
 <form method="post" action="/inicio">
-    <input type='text' name='datos_ingresados'>
-    <input type='submit' value='ejecutar'>
+    <textarea name="datos_ingresados" col="10" rows="10"></textarea>
+    <input type="submit" value="ejecutar">
 </form>
+
 <label>Posicion Inicial: <%=@posicion_inicial%></label><br/>
 <label>Comandos: <%=@comandos%></label><br/>
 <label>Posicion Final: <%=@posicion_final%></label><br/>
