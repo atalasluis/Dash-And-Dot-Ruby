@@ -1,17 +1,14 @@
-# Given("visito la pagina de comandos") do
-#     visit '/'
-#     click_button('iniciar')
-# end
-
-When("ingreso los datos del auto {string}") do |datos|
+Given("visito la pagina de Comandos e ingreso los datos {string}") do |datos|
+    visit '/'
+    click_button('iniciar')
     fill_in('datos_ingresados', :with => datos)
 end
 
-When("presiono el boton {string}") do |ejecutar|
+When("hago click en el botton {string}") do |ejecutar|
     click_button('ejecutar')
 end
 
-Then("deberia mostrar la posicion inicial del auto {string}") do |string|
+Then("muestrar la posicion inicial del auto {string}") do |string|
     expect(page.body).to match /#{string}/m
 end
 

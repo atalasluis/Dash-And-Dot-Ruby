@@ -9,9 +9,8 @@ Feature:
 
 
 Scenario:
-    Given visito la pagina de principal
-    When ingreso los datos del auto "5,5-2,2 N-IAIAIADA"
-    And presiono el botton  "ejecutar"
-    Then deberia mostrar la posicion inicial del auto "Posicion Inicial: 2,2 N"
+    Given visito la pagina de Comandos e ingreso los datos "5,5-2,2 N-IAIAIADA"
+    When hago click en el botton "ejecutar"
+    Then muestrar la posicion inicial del auto "Posicion Inicial: 2,2 N"
     And deberia mostrar los comandos ingresados "Comandos: IAIAIADA"
     And deberia mostrar la posicion final del auto "Posicion Final: 4,2 S"

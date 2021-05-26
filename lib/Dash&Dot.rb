@@ -11,7 +11,6 @@ def Dash_Dot(cad) #cad => 5,5 - 2,2,N - IAIAIADA
     pos=mover_auto(tamano(cadenas[0]), ubicacion2(cadenas[1]), cadenas[2])
     pos[0]=pos[0].to_s
     pos[1]=pos[1].to_s
-    puts pos
     pos_final=pos[0]+','+pos[1]+' '+pos[2]
     cadenas.push(pos_final)
     cadenas.delete_at(0)

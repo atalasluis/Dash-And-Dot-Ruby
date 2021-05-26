@@ -20,7 +20,5 @@ post '/inicio' do
         @comandos=params[:datos_ingresados]
         @posicion_final=params[:datos_ingresados]
     end
-    
-    
     erb :inicio
 end
