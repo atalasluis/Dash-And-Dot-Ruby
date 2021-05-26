@@ -1,6 +1,7 @@
 require 'sinatra'
 require './config'
 require './lib/Dash&Dot.rb'
+require './lib/ConvertString.rb'
 
 get '/' do
     erb :bienvenida
@@ -10,7 +11,6 @@ post '/inicio' do
     
     datos=params[:datos_ingresados]
     if datos!=nil
-        #cad=div(datos)
         cad=Dash_Dot(datos)
         @posicion_inicial=cad[0]
         @comandos=cad[1]
@@ -20,5 +20,7 @@ post '/inicio' do
         @comandos=params[:datos_ingresados]
         @posicion_final=params[:datos_ingresados]
     end
+    
+    
     erb :inicio
 end
