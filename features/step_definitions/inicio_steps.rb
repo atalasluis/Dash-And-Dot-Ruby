@@ -1,4 +1,4 @@
-Given("visito la pagina de comandos") do
+Given("visito la pagina de inicio") do
     visit '/'
     click_button('iniciar')
 end
@@ -10,15 +10,7 @@ end
 When("presiono el boton {string}") do |ejecutar|
     click_button('ejecutar')
 end
-  
+
 Then("deberia mostrar la posicion inicial del auto {string}") do |string|
-    expect(page.body).to match /#{string}/m
-end
-
-Then("deberia mostrar los comandos ingresados {string}") do |string|
-    expect(page.body).to match /#{string}/m
-end
-
-Then("deberia mostrar la posicion final del auto {string}") do |string|
     expect(page.body).to match /#{string}/m
 end

@@ -77,4 +77,7 @@ RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver ubicacion final" do
         expect(Dash_Dot("5,5\n2,2 N\nIAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
     end
+    it "Deberia devolver ubicacion final" do
+        expect(Dash_Dot("5,5-2,2 N-IAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
+    end
 end

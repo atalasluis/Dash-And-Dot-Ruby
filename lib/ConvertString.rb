@@ -26,6 +26,11 @@ def ubicacion2(cadena)
 end
 
 def dividir_cadena2(cadena)
-    cad=cadena.split(/\n/)
+    cad=cadena.split(/\n|-/)
     return cad
+end
+
+def cambiarSigLinea(cadena)
+    cadena.gsub('\n', "\n")
+    return cadena
 end
