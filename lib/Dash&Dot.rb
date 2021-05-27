@@ -1,8 +1,8 @@
-require './lib/Dash&Dot.rb'
 require './lib/Direccion.rb'
 require './lib/Mover.rb'
 require './lib/ConvertString.rb'
 require './lib/obstaculos.rb'
+require './lib/mover_auto.rb'
 
 def Dash_Dot(cad) #cad => 5,5 - 2,2,N - IAIAIADA
     #cadenas=dividir_cadena(cad)
@@ -18,21 +18,3 @@ def Dash_Dot(cad) #cad => 5,5 - 2,2,N - IAIAIADA
     return cadenas
 end
 
-def mover_auto(tamano, ubicacion, cad_comandos)
-    com=cad_comandos.chars
-    com.each do |elem|
-        if(elem != 'A')
-            ubicacion[2]=direccion(ubicacion[2], elem)#(N, elemnto I o D)
-        end
-        if (elem == 'A')
-            if (verificarLimites(ubicacion, tamano))
-                ubicacion=avanzar(ubicacion,tamano)
-            end
-            #obstaculo
-        end
-        
-        
-    end
-    
-    return ubicacion #[2,2,S]
-end

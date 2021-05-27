@@ -2,13 +2,14 @@
 #obstaculos [[O,1,2],[O,3,3], [O,2,5]]
 def sobreObstaculos(ubicacion, obstaculos)
     obstaculos.each do |elemento|
-        if (comparar(elemento, ubicacion))
+        if (comparar(ubicacion,elemento))
             ubicacion=retroceder(ubicacion)
         end
     end
+    return ubicacion
 end
 
-def comparar(obstaculo, ubicacion)
+def comparar(ubicacion,obstaculo)
     if (obstaculo[1]==ubicacion[0] && obstaculo[2]==ubicacion[1])
         return true
     end

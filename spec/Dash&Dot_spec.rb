@@ -5,6 +5,7 @@ require './lib/Limites.rb'
 require './lib/obstaculos.rb'
 
 RSpec.describe "juego de Dash & Dot"do
+    obstaculos=[["O",3,2],["O",1,2],["O",3,3]]
 #direccion
     it "Deberia devolver la direccion" do
         expect(direccion("N", "I")).to eq("O")
@@ -66,26 +67,42 @@ RSpec.describe "juego de Dash & Dot"do
         expect(verificarLimites([6,2], [5,5])).to eq(false)
     end
     it "Deberia devolver ubicacion final sin salir de los limites" do
-        expect(mover_auto([5,5],[2,2,"N"],"IAAA")).to eq([2,0,"O"])
+        expect(mover_auto([5,5],[2,2,"N"],"IAAA",obstaculos)).to eq([2,0,"O"])
     end
     it "Deberia devolver ubicacion final sin salir de los limites inferior" do
-        expect(mover_auto([5,5],[2,2,"N"],"IAIAAA")).to eq([4,1,"S"])
+        expect(mover_auto([5,5],[2,2,"N"],"IAIAAA",obstaculos)).to eq([4,1,"S"])
     end
 #obstaculos
-    it "Deberia devolver retroseder un espacio el auto" do
+    it "Deberia devolver retroceder un espacio el auto" do
         expect(retroceder([2,2,"N"])).to eq([3,2,"N"])
     end
-    it "Deberia devolver retroseder un espacio el auto" do
+    it "Deberia devolver retroceder un espacio el auto" do
         expect(retroceder([2,2,"E"])).to eq([2,1,"E"])
     end
-#por ver
-    it "Deberia devolver ubicacion final" do
-        expect(mover_auto([5,5],[2,2,"N"],"IAIAIADA")).to eq([4,2,"S"])
+#comparar ubicacion
+    it "Deberia devolver true si estan en la misma ubicacion" do
+        expect(comparar([2,2,"E"],["O",2,2])).to eq(true)
     end
-    it "Deberia devolver ubicacion final" do
-        expect(Dash_Dot("5,5\n2,2 N\nIAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
+    it "Deberia devolver false si no estan en la misma ubicacion" do
+        expect(comparar([4,3,"S"],["O",2,2])).to eq(false)
     end
-    it "Deberia devolver ubicacion final" do
-        expect(Dash_Dot("5,5-2,2 N-IAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
+#verificar obstaculos
+    it "Deberia devolver la ubicacion si no se encuentra con un obstaculo" do
+        expect(sobreObstaculos([4,3,"S"],[["O",2,2],["O",1,2],["O",3,3]])).to eq([4,3,"S"])
     end
+    it "Deberia devolver la ubicacion nueva si se encuentra con un obstaculo" do
+        expect(sobreObstaculos([3,3,"S"],[["O",2,2],["O",1,2],["O",3,3]])).to eq([2,3,"S"])
+    end
+# mover auto
+    it "Deberia devolver ubicacion final" do
+        expect(mover_auto([5,5],[2,2,"N"],"IAIAIADA",[["O",3,2],["O",1,2],["O",3,3]])).to eq([4,1,"S"])
+    end
+
+# principal
+    # it "Deberia devolver ubicacion final" do
+    #     expect(Dash_Dot("5,5\n2,2 N\nIAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
+    # end
+    # it "Deberia devolver ubicacion final" do
+    #     expect(Dash_Dot("5,5-2,2 N-IAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
+    # end
 end
