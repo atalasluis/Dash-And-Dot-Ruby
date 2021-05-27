@@ -2,6 +2,7 @@ require './lib/Dash&Dot.rb'
 require './lib/Direccion.rb'
 require './lib/Mover.rb'
 require './lib/Limites.rb'
+require './lib/obstaculos.rb'
 
 RSpec.describe "juego de Dash & Dot"do
 #direccion
@@ -69,6 +70,13 @@ RSpec.describe "juego de Dash & Dot"do
     end
     it "Deberia devolver ubicacion final sin salir de los limites inferior" do
         expect(mover_auto([5,5],[2,2,"N"],"IAIAAA")).to eq([4,1,"S"])
+    end
+#obstaculos
+    it "Deberia devolver retroseder un espacio el auto" do
+        expect(retroceder([2,2,"N"])).to eq([3,2,"N"])
+    end
+    it "Deberia devolver retroseder un espacio el auto" do
+        expect(retroceder([2,2,"E"])).to eq([2,1,"E"])
     end
 #por ver
     it "Deberia devolver ubicacion final" do

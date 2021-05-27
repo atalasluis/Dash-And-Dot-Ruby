@@ -2,6 +2,7 @@ require './lib/Dash&Dot.rb'
 require './lib/Direccion.rb'
 require './lib/Mover.rb'
 require './lib/ConvertString.rb'
+require './lib/obstaculos.rb'
 
 def Dash_Dot(cad) #cad => 5,5 - 2,2,N - IAIAIADA
     #cadenas=dividir_cadena(cad)
@@ -27,6 +28,7 @@ def mover_auto(tamano, ubicacion, cad_comandos)
             if (verificarLimites(ubicacion, tamano))
                 ubicacion=avanzar(ubicacion,tamano)
             end
+            #obstaculo
         end
         
         
