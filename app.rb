@@ -22,3 +22,8 @@ post '/inicio' do
     end
     erb :inicio
 end
+
+
+post '/inicio2' do
+    erb :inicio2
+end
