@@ -40,6 +40,9 @@ RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver un string dividido en varios 2" do
         expect(dividir_cadena2("5,5\n2,2 N\nIAIAIADA")).to eq(["5,5","2,2 N","IAIAIADA"])
     end
+    it "Deberia devolver un string dividido en varios 3" do
+        expect(dividir_cadena2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAA\nO 3,2\nO 1,2\nO 3,3")).to eq(["5,5","2,2 N","IAIAIADA","2,3 N","IAAIAA","O 3,2","O 1,2","O 3,3"])
+    end
     it "Deberia devolver cordenadas de string a int 2" do
         expect(ubicacion2("2,2 N")).to eq([2,2,"N"])
     end
@@ -67,16 +70,16 @@ RSpec.describe "juego de Dash & Dot"do
         expect(verificarLimites([6,2], [5,5])).to eq(false)
     end
     it "Deberia devolver ubicacion final sin salir de los limites" do
-        expect(mover_auto([5,5],[2,2,"N"],"IAAA",obstaculos)).to eq([2,0,"O"])
+        expect(mover_auto2([5,5],[2,2,"N"],"IAAA",obstaculos)).to eq([2,0,"O"])
     end
     it "Deberia devolver ubicacion final sin salir de los limites inferior" do
-        expect(mover_auto([5,5],[2,2,"N"],"IAIAAA",obstaculos)).to eq([4,1,"S"])
+        expect(mover_auto2([5,5],[2,2,"N"],"IAIAAA",obstaculos)).to eq([4,1,"S"])
     end
 #obstaculos
-    it "Deberia devolver retroceder un espacio el auto" do
+    it "Deberia devolver retroseder un espacio el auto" do
         expect(retroceder([2,2,"N"])).to eq([3,2,"N"])
     end
-    it "Deberia devolver retroceder un espacio el auto" do
+    it "Deberia devolver retroseder un espacio el auto" do
         expect(retroceder([2,2,"E"])).to eq([2,1,"E"])
     end
 #comparar ubicacion
@@ -95,14 +98,23 @@ RSpec.describe "juego de Dash & Dot"do
     end
 # mover auto
     it "Deberia devolver ubicacion final" do
-        expect(mover_auto([5,5],[2,2,"N"],"IAIAIADA",[["O",3,2],["O",1,2],["O",3,3]])).to eq([4,1,"S"])
+        expect(mover_auto2([5,5],[2,2,"N"],"IAIAIADA",[["O",3,2],["O",1,2],["O",3,3]])).to eq([4,1,"S"])
     end
-
+    it "Deberia devolver ubicacion final" do
+        expect(mover_auto2([5,5],[2,3,"N"],"IAAIAA",[["O",3,2],["O",1,2],["O",3,3]])).to eq([4,1,"S"])
+    end
+#stringObstaculos
+    it "Deberia devolver el obstaculos como arreglo" do
+        expect(stringObstaculos("O 3,3")).to eq(["O",3,3])
+    end
+    it "Deberia devolver el obstaculos como arreglo" do
+        expect(convertObstaculos(["O 3,2","O 1,2","O 3,3"])).to eq([["O",3,2],["O",1,2],["O",3,3]])
+    end
 # principal
-    # it "Deberia devolver ubicacion final" do
-    #     expect(Dash_Dot("5,5\n2,2 N\nIAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
-    # end
-    # it "Deberia devolver ubicacion final" do
-    #     expect(Dash_Dot("5,5-2,2 N-IAIAIADA")).to eq(["2,2 N","IAIAIADA","4,2 S"])
-    # end
+    it "Deberia devolver ubicacion final" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAA\nO 3,2\nO 1,2\nO 3,3")).to eq(["5,5","2,2 N","IAIAIADA","4,1 S","2,3 N","IAAIAA","3,1 S"])
+    end
+    it "Deberia devolver ubicacion final" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAA\nO 3,2\nO 1,2\nO 3,3")).to eq(["5,5","2,2 N","IAIAIADA","4,1 S","2,3 N","IAA","2,1 O"])
+    end
 end
