@@ -8,13 +8,14 @@ def mover_auto2(tamano, ubicacion, cad_comandos, obstaculos)
         if (elem == 'A')
             if (verificarLimites(ubicacion, tamano))
                 ubicacion=avanzar(ubicacion,tamano)
+                
             end
+            
             sobreObstaculos(ubicacion, obstaculos)
         end
         
         
     end
-    
     return ubicacion #[2,2,S]
 end
 
