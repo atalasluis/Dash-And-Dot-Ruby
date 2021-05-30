@@ -19,6 +19,7 @@ def Dash_Dot2(cad) #cad => 5,5 - 2,2 N - IAIAIADA - 3,4 S - DAAAIAAIAA - O 3,2 -
     
     pos[0]=pos[0].to_s
     pos[1]=pos[1].to_s
+
     pos_final=pos[0]+','+pos[1]+' '+pos[2]
     
     
