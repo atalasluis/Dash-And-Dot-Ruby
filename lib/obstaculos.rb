@@ -1,3 +1,4 @@
+#----------------------------------------------------
 #tamño [5,5] ubicacion [2,2,"N"] comandos "IAIAIADA"
 #obstaculos [[O,1,2],[O,3,3], [O,2,5]]
 def sobreObstaculos(ubicacion, obstaculos)
